@@ -17,7 +17,7 @@ public class SplashScreen extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int SPLASH_TIME_OUT = 5000;
+        int SPLASH_TIME_OUT = 3000;
         /*
          * Showing splash screen with a timer. This will be useful when you
          * want to show case your app logo / company

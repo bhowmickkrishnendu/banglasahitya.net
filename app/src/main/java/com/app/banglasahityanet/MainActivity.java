@@ -21,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
         mywebview.setWebViewClient(new WebViewClient());
         mywebview.loadUrl("https://banglasahitya.net/");
         WebSettings webSettings= mywebview.getSettings();
+        // Below lines for JS Enable in website view.
         webSettings.setJavaScriptEnabled(true);
+        mywebview.setWebViewClient(new WebViewClient());
+        webSettings.setDomStorageEnabled(true);
     }
     public class mywebclient extends WebViewClient{
         @Override
