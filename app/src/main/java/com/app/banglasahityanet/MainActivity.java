@@ -2,7 +2,7 @@ package com.app.banglasahityanet;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -10,8 +10,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener{
     private WebView mywebview;
+    private SwipeRefreshLayout refreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,18 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
         mywebview.setWebViewClient(new WebViewClient());
         webSettings.setDomStorageEnabled(true);
+        // Swipe down refresh
+        refreshLayout = (SwipeRefreshLayout) findViewById(R.id.swiperefresh);
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh () {
+                refreshLayout.setRefreshing(false);
+            }
+        });
+    }
+
+    @Override
+    public void onRefresh () {
     }
     public class mywebclient extends WebViewClient{
         @Override
