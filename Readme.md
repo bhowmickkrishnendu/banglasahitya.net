@@ -28,7 +28,6 @@ https://github.com/bhowmickkrishnendu/banglasahitya.net
 
 3. Edit the `MainActivity.java` file to specify the URL of the website you want to load:
 
-```java
 webView.loadUrl("https://www.example.com");
 
 4.Run the project on an emulator or physical device to see the website loaded within the app.
